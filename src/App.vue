@@ -106,11 +106,6 @@ export default {
   }),
   methods: {
     handleScroll(event) {
-      // Any code to be executed when the window is scrolled
-      // var $w = $(this),
-      // 		st = $w.scrollTop(),
-      // 		navbar = $('.pb_navbar'),
-      // 		sd = $('.js-scroll-wrap');
       const st = window.scrollY;
 
       if (st > 150) {
@@ -127,19 +122,11 @@ export default {
         if (!this.navbarClasses.awake) {
           this.navbarClasses.awake = true;
         }
-
-        // if(sd.length > 0) {
-        // 	sd.addClass('sleep');
-        // }
       }
       if (st < 350) {
         if (this.navbarClasses.awake) {
           this.navbarClasses.awake = false;
-          //navbar.addClass('sleep');
         }
-        // if(sd.length > 0) {
-        // 	sd.removeClass('sleep');
-        // }
       }
     }
   },
