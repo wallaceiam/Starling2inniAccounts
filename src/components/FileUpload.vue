@@ -2,7 +2,7 @@
   <div id="file-upload">
     <div class="container">
       <!--UPLOAD-->
-      <form enctype="multipart/form-data" novalidate v-if="isInitial || isSaving">
+      <form enctype="multipart/form-data" novalidate>
         <div class="dropbox">
           <input
             type="file"
@@ -12,7 +12,7 @@
             accept=".csv"
             class="input-file"
           >
-          <p v-if="isInitial">Drag your file here to begin
+          <p v-if="!isSaving">Drag your file here to begin
             <br>or click to browse
           </p>
           <p v-if="isSaving">Uploading {{ fileCount }} files...</p>
