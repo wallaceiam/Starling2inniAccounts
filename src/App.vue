@@ -6,8 +6,8 @@
       id="pb-navbar"
     >
       <div class="container">
-        <a class="navbar-brand" href="#home">Starling 2 inniAccounts</a>
-        <button
+        <a class="navbar-brand" href="/">Starling 2 inniAccounts</a>
+        <!-- <button
           class="navbar-toggler ml-auto"
           type="button"
           data-toggle="collapse"
@@ -31,19 +31,19 @@
             <li class="nav-item">
               <a class="nav-link" href="#reviews">Reviews</a>
             </li>
-            <!-- <li class="nav-item">
+            <! - - <li class="nav-item">
               <a class="nav-link" href="#section-pricing">Pricing</a>
-            </li>-->
+            </li>- - >
             <li class="nav-item">
               <a class="nav-link" href="#faq">FAQ</a>
             </li>
-            <!-- <li class="nav-item cta-btn ml-xl-2 ml-lg-2 ml-md-0 ml-sm-0 ml-0">
+            <! - - <li class="nav-item cta-btn ml-xl-2 ml-lg-2 ml-md-0 ml-sm-0 ml-0">
               <a class="nav-link" href="https://uicookies.com/" target="_blank">
                 <span class="pb_rounded-4 px-4">Get Started</span>
               </a>
-            </li>-->
+            </li> - - >
           </ul>
-        </div>
+        </div> -->
       </div>
     </nav>
     <!-- END nav -->

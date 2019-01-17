@@ -23,73 +23,30 @@
 </template>
 
 <script>
-/* eslint-disable */
-import { upload } from "./../services/file-upload.service";
+import { mapGetters } from 'vuex';
 
-const STATUS_INITIAL = 0,
-  STATUS_SAVING = 1,
-  STATUS_SUCCESS = 2,
-  STATUS_FAILED = 3;
 
 export default {
   name: "FileUpload",
   data() {
     return {
-      uploadedFiles: [],
-      uploadError: null,
-      currentStatus: null,
       uploadFieldName: "csvFiles"
     };
   },
   computed: {
-    isInitial() {
-      return this.currentStatus === STATUS_INITIAL;
-    },
-    isSaving() {
-      return this.currentStatus === STATUS_SAVING;
-    },
-    isSuccess() {
-      return this.currentStatus === STATUS_SUCCESS;
-    },
-    isFailed() {
-      return this.currentStatus === STATUS_FAILED;
-    }
+    ...mapGetters([
+      'isSaving',
+    ])
   },
   methods: {
     reset() {
-      // reset form to initial state
-      this.currentStatus = STATUS_INITIAL;
-      this.uploadedFiles = [];
-      this.uploadError = null;
+      this.$store.dispatch('reset');
     },
     save(formData) {
-      // upload data to the server
-      this.currentStatus = STATUS_SAVING;
-
-      upload(formData)
-        .then(x => {
-          this.uploadedFiles = [].concat(x);
-          this.$emit('file-uploaded', x);
-          this.currentStatus = STATUS_SUCCESS;
-        })
-        .catch(err => {
-          this.uploadError = err.response;
-          this.currentStatus = STATUS_FAILED;
-        });
+      
     },
     filesChange(fieldName, fileList) {
-      // handle file changes
-      const formData = new FormData();
-
-      if (!fileList.length) return;
-
-      // append the files to FormData
-      Array.from(Array(fileList.length).keys()).map(x => {
-        formData.append(fieldName, fileList[x], fileList[x].name);
-      });
-
-      // save it
-      this.save(formData);
+      this.$store.dispatch('filesChanged', { fieldName, fileList });
     }
   },
   mounted() {
