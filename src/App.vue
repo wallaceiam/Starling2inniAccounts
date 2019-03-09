@@ -1,13 +1,13 @@
 <template>
-  <div id="app">
-    <nav
-      class="navbar navbar-expand-lg navbar-dark pb_navbar pb_scrolled-light"
-      v-bind:class="navbarClasses"
-      id="pb-navbar"
-    >
-      <div class="container">
-        <a class="navbar-brand" href="/">Starling 2 inniAccounts</a>
-        <!-- <button
+    <div id="app">
+        <nav
+            class="navbar navbar-expand-lg navbar-dark pb_navbar pb_scrolled-light"
+            v-bind:class="navbarClasses"
+            id="pb-navbar"
+        >
+            <div class="container">
+                <a class="navbar-brand" href="/">Starling 2 inniAccounts</a>
+                <!-- <button
           class="navbar-toggler ml-auto"
           type="button"
           data-toggle="collapse"
@@ -43,99 +43,86 @@
               </a>
             </li> - - >
           </ul>
-        </div> -->
-      </div>
-    </nav>
-    <!-- END nav -->
-    <router-view/>
+                </div>-->
+            </div>
+        </nav>
+        <!-- END nav -->
+        <router-view/>
 
-    <footer class="pb_footer bg-light" role="contentinfo">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col">
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="#" class="p-2">
-                  <i class="fa fa-facebook"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#" class="p-2">
-                  <i class="fa fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#" class="p-2">
-                  <i class="fa fa-linkedin"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col text-center">
-            <p class="pb_font-14">
-              &copy; 2017
-              <a href="https://uicookies.com/">Landing</a> Free Bootstrap4. All Rights Reserved.
-              <br>Designed &amp; Developed by
-              <a href="https://uicookies.com/">uicookies.com</a>
-              <small>
-                (Don't remove credit link on this footer. See
-                <a
-                  href="https://uicookies.com/license/"
-                  target="_blank"
-                >license</a>)
-              </small>
-            </p>
-            <p class="pb_font-14">
-              Demo Images:
-              <a href="https://unsplash.com/" target="_blank" rel="nofollow">Unsplash</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
+        <footer class="pb_footer bg-light" role="contentinfo">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col">
+                        <!-- <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <a href="#" class="p-2">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="p-2">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="p-2">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                        </ul> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <p class="pb_font-14">
+                            &copy; 2019
+                            Chris Wallace. All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 </template>
 
 <script>
 export default {
-  name: "App",
-  data: () => ({
-    navbarClasses: { scrolled: false, awake: false }
-  }),
-  methods: {
-    handleScroll(event) {
-      const st = window.scrollY;
+    name: 'App',
+    data: () => ({
+        navbarClasses: { scrolled: false, awake: false }
+    }),
+    methods: {
+        handleScroll (event) {
+            const st = window.scrollY;
 
-      if (st > 150) {
-        if (!this.navbarClasses.scrolled) {
-          this.navbarClasses.scrolled = true;
+            if (st > 150) {
+                if (!this.navbarClasses.scrolled) {
+                    this.navbarClasses.scrolled = true;
+                }
+            }
+            if (st < 150) {
+                if (this.navbarClasses.scrolled) {
+                    this.navbarClasses.scrolled = false;
+                }
+            }
+            if (st > 350) {
+                if (!this.navbarClasses.awake) {
+                    this.navbarClasses.awake = true;
+                }
+            }
+            if (st < 350) {
+                if (this.navbarClasses.awake) {
+                    this.navbarClasses.awake = false;
+                }
+            }
         }
-      }
-      if (st < 150) {
-        if (this.navbarClasses.scrolled) {
-          this.navbarClasses.scrolled = false;
-        }
-      }
-      if (st > 350) {
-        if (!this.navbarClasses.awake) {
-          this.navbarClasses.awake = true;
-        }
-      }
-      if (st < 350) {
-        if (this.navbarClasses.awake) {
-          this.navbarClasses.awake = false;
-        }
-      }
+    },
+    created () {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    destroyed () {
+        window.removeEventListener('scroll', this.handleScroll);
     }
-  },
-  created() {
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  destroyed() {
-    window.removeEventListener("scroll", this.handleScroll);
-  }
 };
 </script>
 
@@ -148,9 +135,9 @@ export default {
 @import "./assets/scss/landing-2";
 
 #section-home {
-  .container {
-    margin-top: 2em;
-    margin-bottom: 2em;
-  }
+    .container {
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
 }
 </style>
