@@ -83,7 +83,7 @@
                 <div class="row">
                     <div class="col text-center">
                         <p class="pb_font-9">
-                            v1.0.0
+                            v1.0.1
                         </p>
                     </div>
                 </div>
