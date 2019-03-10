@@ -1,30 +1,10 @@
 # Starling2inniAccounts
 
-> Converts Starling CSV to InniAccounts CSV
+Simply converts Starling CSV to InniAccounts CSV
 
-## Build Setup
+[Demo site](https://starling2inni.azurewebsites.net/)
 
-``` bash
-# install dependencies
-npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+[![Build Status](https://dev.azure.com/mymojo/Starling2inniAcounts/_apis/build/status/Build%20Docker%20container?branchName=master)](https://dev.azure.com/mymojo/Starling2inniAcounts/_build/latest?definitionId=3&branchName=master)
 
-# build for production with minification
-npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
