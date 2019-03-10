@@ -98,10 +98,8 @@ export default new Vuex.Store({
                             const balance = x['Balance (GBP)'];
                             return {
                                 Date: date,
-                                Description: !reference
-                                    .toLowerCase()
-                                    .startsWith(counterParty.toLowerCase())
-                                    ? `${counterParty} ${reference}`
+                                Description: reference && reference.length > 0
+                                    ? `${counterParty} (${reference})`
                                     : counterParty,
                                 'Paid In': amount > 0 ? amount : undefined,
                                 'Paid Out': amount < 0 ? amount * -1 : undefined,
