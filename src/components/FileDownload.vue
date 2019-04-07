@@ -5,12 +5,13 @@
                 <span class="alerticon">
                     <i class="fas fa-check-circle" alt="checkmark"></i>
                 </span>
-                <p>Click continue to download your new CSV file which you can import into inniAccounts</p>
+                <p class="mbt-1">Click continue to download your new CSV file which you can import into inniAccounts</p>
                 <button
                     class="button-box btn btn-primary btn-lg pb_btn-pill btn-shadow-blue"
-                    v-on:click="exportCSV">Continue</button>
-                <p>
-                <a href="#" v-on:click="reset">convert another</a>
+                    v-on:click="exportCSV"
+                >Continue</button>
+                <p class="mtb-1">
+                    <a href="#" v-on:click="reset">Convert another?</a>
                 </p>
             </div>
 
@@ -18,15 +19,13 @@
                 <span class="alerticon">
                     <i class="fas fa-exclamation-circle" alt="error"></i>
                 </span>
-               <p>Oh no, something went wrong.</p>
-                <p>{{ uploadError }}</p>
+                <p class="mbt-1">Oh no, something went wrong.</p>
+                <p class="mtb-1">{{ uploadError }}</p>
 
                 <button
                     class="button-box btn btn-primary btn-lg pb_btn-pill btn-shadow-blue"
                     v-on:click="reset"
-                >
-                    Try again
-                </button>
+                >Try again</button>
             </div>
         </div>
     </div>
@@ -97,7 +96,11 @@ h1 > span {
     white-space: normal;
 }
 a {
-    color: #1d82ff
+    color: #1d82ff;
+}
+p.mtb-1 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 /** page structure **/
 #w {
