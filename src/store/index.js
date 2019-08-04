@@ -91,10 +91,7 @@ export default new Vuex.Store({
                         return;
                     }
                     
-                    const data = handler.convert(resultSet)
-                        .sort((a, b) => {
-                            return (new Date(b.Date) - new Date(a.Date)) * -1;
-                        });
+                    const data = handler.convert(resultSet);
 
                     commit('uploadSuccess', { x, data, fileName: fileName.replace('Starling', 'inniAccount') });
                     resolve(data);
