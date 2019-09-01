@@ -58,7 +58,7 @@ export default new Vuex.Store({
         }
     },
     actions: {
-        filesChanged ({ commit, state }, payload) {
+        filesChanged ({ commit }, payload) {
             commit('saving');
             const { fieldName, fileList } = payload;
             // handle file changes

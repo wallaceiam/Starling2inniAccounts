@@ -74,7 +74,7 @@ export const VirginBusinessHandler = {
       .sort((a, b) => {
         // sort desc
         return (parseDateStr(b.Date) - parseDateStr(a.Date)) * -1;
-      });;
+      });
   },
 };
 
